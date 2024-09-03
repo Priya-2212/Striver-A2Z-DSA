@@ -1,54 +1,59 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int partition(vector<int> &arr, int low, int high) {
-    int pivot = arr[low];
-    int i = low;
-    int j = high;
+void merge(vector<int> &arr, int low, int mid, int high) {
+    vector<int> temp; 
+    int left = low;     
+    int right = mid + 1;  
 
-    while (i < j) {
-        while (arr[i] <= pivot && i <= high - 1) {
-            i++;
+
+    while (left <= mid && right <= high) {
+        if (arr[left] <= arr[right]) {
+            temp.push_back(arr[left]);
+            left++;
         }
-
-        while (arr[j] > pivot && j >= low + 1) {
-            j--;
+        else {
+            temp.push_back(arr[right]);
+            right++;
         }
-        if (i < j) swap(arr[i], arr[j]);
     }
-    swap(arr[low], arr[j]);
-    return j;
-}
 
-void qs(vector<int> &arr, int low, int high) {
-    if (low < high) {
-        int pIndex = partition(arr, low, high);
-        qs(arr, low, pIndex - 1);
-        qs(arr, pIndex + 1, high);
+    while (left <= mid) {
+        temp.push_back(arr[left]);
+        left++;
+    }
+    while (right <= high) {
+        temp.push_back(arr[right]);
+        right++;
+    }
+    for (int i = low; i <= high; i++) {
+        arr[i] = temp[i - low];
     }
 }
 
-vector<int> quickSort(vector<int> arr) {
-    qs(arr, 0, arr.size() - 1);
-    return arr;
+void mergeSort(vector<int> &arr, int low, int high) {
+    if (low >= high) return;
+    int mid = (low + high) / 2 ;
+    mergeSort(arr, low, mid); 
+    mergeSort(arr, mid + 1, high); 
+    merge(arr, low, mid, high);
 }
 
-int main()
-{
-    vector<int> arr = {4, 6, 2, 5, 7, 9, 1, 3};
-    int n = arr.size();
-    cout << "Before Using quick Sort: " << endl;
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
+int main() {
+
+    vector<int> arr = {9, 4, 7, 6, 3, 1, 5}  ;
+    int n = 7;
+
+    cout << "Before Sorting Array: " << endl;
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " "  ;
     }
     cout << endl;
-
-    arr = quickSort(arr);
-    cout << "After Using quick sort: " << "\n";
+    mergeSort(arr, 0, n - 1);
+    cout << "After Sorting Array: " << endl;
     for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
+        cout << arr[i] << " "  ;
     }
-    cout << "\n";
-    return 0;
+    cout << endl;
+    return 0 ;
 }
