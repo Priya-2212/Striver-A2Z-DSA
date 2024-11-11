@@ -1,17 +1,56 @@
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 
-class Solution {
-public:
-    int maxProfit(vector<int>& prices) {
-        int maxPro = 0;
-        int n = prices.size();
-        int minPrice = INT_MAX;
-        for (int i = 0; i < prices.size(); i++) {
-            minPrice = min(minPrice, prices[i]);
-            maxPro = max(maxPro, prices[i] - minPrice);
+//brute force approach
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int maxProfit(vector<int> &arr) {
+    int maxPro = 0;
+    int n = arr.size();
+
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] > arr[i]) {
+            maxPro = max(arr[j] - arr[i], maxPro);
+            }
         }
+        }
+
     return maxPro;
+}
+
+int main() {
+    vector<int> arr = {7,1,5,3,6,4};
+    int maxPro = maxProfit(arr);
+    cout << "Max profit is: " << maxPro << endl;
+}
+
+//TC -> O(n^2)
+
+
+//Optimal approach
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int maxProfit(vector<int> &arr) {
+    int maxPro = 0;
+    int n = arr.size();
+    int minPrice = INT_MAX;
+
+    for (int i = 0; i < arr.size(); i++) {
+        minPrice = min(minPrice, arr[i]);
+        maxPro = max(maxPro, arr[i] - minPrice);
     }
-};
+    
+    return maxPro;
+}
+
+int main() {
+    vector<int> arr = {7,1,5,3,6,4};
+    int maxPro = maxProfit(arr);
+    cout << "Max profit is: " << maxPro << endl;
+}
 
 // Time Complextity: O(n)
