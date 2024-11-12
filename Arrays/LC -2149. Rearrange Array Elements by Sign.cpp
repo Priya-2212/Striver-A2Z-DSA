@@ -1,3 +1,5 @@
+//optimal approach
+
 class Solution {
 public:
     vector<int> rearrangeArray(vector<int>& nums) {
@@ -15,3 +17,5 @@ public:
         return nums;
     }
 };
+
+//Time complexity
