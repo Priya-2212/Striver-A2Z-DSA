@@ -17,3 +17,5 @@ public:
         return triangle;
     }
 };
+
+//Time complexity:
