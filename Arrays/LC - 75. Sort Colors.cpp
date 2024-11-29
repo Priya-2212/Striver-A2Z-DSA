@@ -1,3 +1,6 @@
+//https://leetcode.com/problems/sort-colors/description/
+
+
 //solved using dutch national flag algorithm
 class Solution {
 public:
@@ -21,3 +24,5 @@ public:
         }
     }
 };
+//Time complexity: O(n)
+//Space complexity: O(1)
