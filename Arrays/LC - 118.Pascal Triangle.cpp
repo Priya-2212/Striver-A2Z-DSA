@@ -18,5 +18,5 @@ public:
     }
 };
 
-//Time complexity:
-//Space compplexity:
+//Time complexity: O(numRows^2)
+//Space compplexity: O(numRows^2)
