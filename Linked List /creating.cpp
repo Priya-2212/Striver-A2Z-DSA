@@ -1,3 +1,5 @@
+
+
 class Node{
     Public: // access modifier
     int data; // the data value
