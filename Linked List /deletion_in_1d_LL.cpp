@@ -5,7 +5,4 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void print(Node* head) {
-while(head!=
-Node* removesHead(Node* head) {
   
