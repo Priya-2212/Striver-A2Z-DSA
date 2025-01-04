@@ -6,3 +6,11 @@
 using namespace std;
 
   
+// deletion of tail in ll
+
+
+// deletion of kth element in ll
+
+
+// deletion of particular element in ll
+
