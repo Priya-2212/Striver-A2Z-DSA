@@ -14,7 +14,7 @@ using namespace std;
 
 // deletion of particular element in ll
 
-
+completed will write tomm
 
 //time complexity:
 //space complexity: 
