@@ -15,6 +15,7 @@ using namespace std;
 // deletion of particular element in ll
 
 completed will write tomm
+okayyy sorr
 
 //time complexity:
 //space complexity: 
