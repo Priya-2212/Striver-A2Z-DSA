@@ -67,6 +67,13 @@ int main() {
 // deletion of kth element in ll
 
 
+
+
+
+
+
+
+
 // deletion of particular element in ll
 
 
