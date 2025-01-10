@@ -65,8 +65,6 @@ int main() {
 }
 
 // deletion of kth element in ll
-
-
 #include <bits/stdc++.h>
 using namespace std;
 
