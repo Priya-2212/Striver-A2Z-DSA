@@ -1,13 +1,21 @@
 //from a linked list, the deletion can be done in four ways: head, position, value and last
 
 // deletion of head of ll
-
 #include <bits/stdc++.h>
 using namespace std;
 
-  
-// deletion of tail in ll
 
+
+
+
+
+
+
+
+
+
+
+// deletion of tail in ll
 
 // Node class for a linked list
 class Node {
@@ -64,9 +72,22 @@ int main() {
     printLL(head);
 }
 
+
+
+
 // deletion of kth element in ll
 #include <bits/stdc++.h>
 using namespace std;
+
+
+
+
+
+
+
+
+
+
 
 
 
