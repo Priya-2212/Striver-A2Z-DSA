@@ -10,11 +10,6 @@ using namespace std;
 
 
 
-
-
-
-
-
 // deletion of tail in ll
 
 // Node class for a linked list
