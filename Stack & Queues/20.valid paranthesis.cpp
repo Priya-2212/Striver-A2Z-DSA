@@ -18,3 +18,5 @@ public:
         return st.empty(); 
     }
 };
+
+//time complexity: O(n)
