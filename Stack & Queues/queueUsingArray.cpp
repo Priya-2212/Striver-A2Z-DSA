@@ -1,6 +1,8 @@
-#include<bits/stdc++.h>
+//Implementation of queue using array
 
+#include<iostream>
 using namespace std;
+
 class Queue {
   int * arr;
   int start, end, currSize, maxSize;
@@ -19,6 +21,8 @@ class Queue {
     end = -1;
     currSize = 0;
   }
+
+  //Push
   void push(int newElement) {
     if (currSize == maxSize) {
       cout << "Queue is full\nExiting..." << endl;
@@ -33,6 +37,8 @@ class Queue {
     cout << "The element pushed is " << newElement << endl;
     currSize++;
   }
+
+  //Pop
   int pop() {
     if (start == -1) {
       cout << "Queue Empty\nExiting..." << endl;
@@ -46,6 +52,8 @@ class Queue {
     currSize--;
     return popped;
   }
+
+  //top
   int top() {
     if (start == -1) {
       cout << "Queue is Empty" << endl;
@@ -53,6 +61,8 @@ class Queue {
     }
     return arr[start];
   }
+
+  //size
   int size() {
     return currSize;
   }
@@ -60,11 +70,14 @@ class Queue {
 };
 
 int main() {
+
   Queue q(6);
+
   q.push(4);
   q.push(14);
   q.push(24);
   q.push(34);
+  
   cout << "The peek of the queue before deleting any element " << q.top() << endl;
   cout << "The size of the queue before deletion " << q.size() << endl;
   cout << "The first element to be deleted " << q.pop() << endl;
@@ -73,3 +86,6 @@ int main() {
 
   return 0;
 }
+
+//time complexity: O(1)
+//space complexity: O(N)
