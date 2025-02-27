@@ -35,3 +35,7 @@ stack < pair < int, int >> st;
  * int param_3 = obj->top();
  * int param_4 = obj->getMin();
  */
+
+
+//time complexity:O(1)
+//space complexity: O(2N)
